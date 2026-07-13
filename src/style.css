@@ -199,6 +199,38 @@ p {
   margin-bottom: 1.5rem;
 }
 
+.hero-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+}
+
+.profile-link {
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.profile-link:hover {
+  transform: scale(1.05);
+}
+
+.hero-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  box-shadow: var(--glass-shadow);
+}
+
+.hero-name {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
 .hero-subtitle {
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
@@ -256,6 +288,115 @@ p {
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Page Content */
+.content-page {
+  padding-top: 120px;
+}
+
+.page-hero {
+  padding-bottom: 1rem;
+}
+
+.page-hero-card {
+  padding: 3rem;
+  text-align: center;
+}
+
+.page-lead {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.article-section {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.article-section .glass {
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+ table td {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  background: rgba(6, 78, 59, 0.08);
+}
+
+.blockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.about-card {
+  padding: 2.5rem;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--glass-shadow);
+}
+
+.photo-caption {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
 }
 
 .service-icon {
