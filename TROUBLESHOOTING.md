@@ -57,9 +57,26 @@ export default defineConfig(({ mode }) => {
 Añades una etiqueta `<img src="./foto.png" />` en tu HTML, funciona en local, pero falla en producción.
 
 **Causa:**
-Para que Vite procese, optimice y genere los hash correctos para las imágenes estáticas referenciadas en tu HTML, debe poder encontrarlas y resolver la ruta correctamente. Las imágenes puestas directamente en la raíz y llamadas de forma relativa a veces causan conflictos de caché o se pierden si no se referencian correctamente.
+Este proyecto se sirve bajo el sub-path `/TeledigitosWeb/` en GitHub Pages (configurado en `vite.config.js` como `base: '/TeledigitosWeb/'`). Las rutas absolutas desde la raíz (`/imagen.png`) resuelven al dominio raíz (`https://usuario.github.io/imagen.png`), no al sub-path, y dan 404.
 
 **Solución:**
-Las mejores prácticas en este proyecto para imágenes son:
-1. Usar siempre etiquetas `<img>` directas en los archivos HTML registrados en `vite.config.js` para que Vite las detecte y procese al empaquetar en la carpeta `dist/assets/`.
-2. O bien, colocar las imágenes que no cambian en la carpeta `/public` y referenciarlas de forma absoluta desde la raíz, ej: `<img src="/favicon.svg" />`.
+Hay dos patrones válidos según el tipo de asset:
+
+1. **Imágenes importadas en JS** (componentes como `AppHeader.js`): usa `import` de ES modules. Vite reescribe la ruta automáticamente al empaquetar.
+   ```js
+   import logo from '../../images/teledigitos.png';
+   // luego: <img src="${logo}" />
+   ```
+
+2. **Assets referenciados directamente en HTML**: usa rutas relativas (`./imagen.png`) o el placeholder `%BASE_URL%` que Vite reemplaza con el base path correcto al compilar.
+   ```html
+   <!-- bien -->
+   <img src="./images/yoFoto.png" />
+   <link rel="icon" href="%BASE_URL%favicon.svg" />
+
+   <!-- mal — falla en GitHub Pages -->
+   <img src="/images/yoFoto.png" />
+   <link rel="icon" href="/favicon.svg" />
+   ```
+
+> **Nota:** `%BASE_URL%` es especialmente importante para el favicon y cualquier `<link>` o `<meta>` en `<head>`, ya que Vite no reescribe atributos `href` en etiquetas `<link>` de la misma forma que lo hace con `src` en `<img>` procesadas por Rollup.
