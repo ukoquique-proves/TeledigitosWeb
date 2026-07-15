@@ -41,3 +41,7 @@ Puedes configurar el repositorio para que cada vez que hagas `git push` a `main`
 
 ## Variables de Entorno (Opcional)
 Consulta el archivo `.env.example` para ver la estructura de variables de entorno, por si usas scripts de CI/CD automatizados o herramientas de despliegue como Vercel/Netlify en el futuro. No debes subir nunca tu archivo `.env` a GitHub.
+
+## Documentación del proyecto
+- [CHANGELOG.md](./CHANGELOG.md) — historial de cambios por fecha.
+- [ROADMAP.md](./ROADMAP.md) — próximos pasos y dirección del contenido.
