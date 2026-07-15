@@ -1,5 +1,6 @@
 import './style.css'
-
+import './components/AppHeader.js'
+import './components/AppFooter.js'
 // Add scroll animation observer
 document.addEventListener('DOMContentLoaded', () => {
   const observerOptions = {
