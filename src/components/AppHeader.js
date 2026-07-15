@@ -10,7 +10,12 @@ class AppHeader extends HTMLElement {
               <img src="${teledigitosLogo}" alt="Teledígitos" style="height: 40px; width: auto;" />
             </a>
           </div>
-          <nav class="nav-links">
+          <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="nav-links" id="main-nav">
             <a href="index.html">Inicio</a>
             <a href="index.html#manifesto">Manifiesto</a>
             <a href="index.html#services">Servicios</a>
@@ -20,7 +25,26 @@ class AppHeader extends HTMLElement {
         </div>
       </header>
     `;
+
+    const toggle = this.querySelector('.nav-toggle');
+    const nav = this.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // Close menu when a link is clicked
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 }
 
 customElements.define('app-header', AppHeader);
+
