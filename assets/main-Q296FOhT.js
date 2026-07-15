@@ -3,10 +3,15 @@
         <div class="container nav-content">
           <div class="logo">
             <a href="index.html">
-              <img src="${e}" alt="Teledígitos" style="height: 40px; width: auto;" />
+              <img src="${e}" alt="Teledígitos" class="nav-logo" />
             </a>
           </div>
-          <nav class="nav-links">
+          <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="nav-links" id="main-nav">
             <a href="index.html">Inicio</a>
             <a href="index.html#manifesto">Manifiesto</a>
             <a href="index.html#services">Servicios</a>
@@ -15,14 +20,14 @@
           </nav>
         </div>
       </header>
-    `}};customElements.define(`app-header`,t);var n=`/TeledigitosWeb/assets/logo-Teledigitos-DLg7xNpc.png`,r=class extends HTMLElement{connectedCallback(){this.innerHTML=`
+    `;let t=this.querySelector(`.nav-toggle`),n=this.querySelector(`.nav-links`);t.addEventListener(`click`,()=>{let e=n.classList.toggle(`open`);t.classList.toggle(`open`,e),t.setAttribute(`aria-expanded`,e),t.setAttribute(`aria-label`,e?`Cerrar menú`:`Abrir menú`)}),n.querySelectorAll(`a`).forEach(e=>{e.addEventListener(`click`,()=>{n.classList.remove(`open`),t.classList.remove(`open`),t.setAttribute(`aria-expanded`,`false`),t.setAttribute(`aria-label`,`Abrir menú`)})})}};customElements.define(`app-header`,t);var n=`/TeledigitosWeb/assets/logo-Teledigitos-DLg7xNpc.png`,r=class extends HTMLElement{connectedCallback(){this.innerHTML=`
       <footer class="footer">
         <div class="container footer-content">
           <div class="footer-logo">
-            <img src="${n}" alt="Teledígitos" style="height: 100px; width: auto;" />
+            <img src="${n}" alt="Teledígitos" class="footer-logo-img" />
           </div>
           <div class="footer-tagline">Tecnología al servicio de la comunidad. / Sistemas de Comunicación Operativa.</div>
           <div class="footer-copy">&copy; 2026 Teledígitos. Todos los derechos reservados.</div>
         </div>
       </footer>
-    `}};customElements.define(`app-footer`,r),document.addEventListener(`DOMContentLoaded`,()=>{let e=new IntersectionObserver((e,t)=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{root:null,rootMargin:`0px`,threshold:.15});document.querySelectorAll(`.fade-in`).forEach(t=>e.observe(t));let t=document.querySelector(`.navbar`);window.addEventListener(`scroll`,()=>{window.scrollY>50?(t.style.boxShadow=`0 4px 6px -1px rgba(0, 0, 0, 0.1)`,t.style.background=`rgba(255, 255, 255, 0.9)`):(t.style.boxShadow=`none`,t.style.background=`rgba(255, 255, 255, 0.7)`)})});
+    `}};customElements.define(`app-footer`,r),document.addEventListener(`DOMContentLoaded`,()=>{let e=new IntersectionObserver((e,t)=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add(`visible`),t.unobserve(e.target))})},{root:null,rootMargin:`0px`,threshold:.15});document.querySelectorAll(`.fade-in`).forEach(t=>e.observe(t));let t=document.querySelector(`.navbar`);window.addEventListener(`scroll`,()=>{t.classList.toggle(`scrolled`,window.scrollY>50)})});
