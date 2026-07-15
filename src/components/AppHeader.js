@@ -33,6 +33,7 @@ class AppHeader extends HTMLElement {
       const open = nav.classList.toggle('open');
       toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open);
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     });
 
     // Close menu when a link is clicked
@@ -41,6 +42,7 @@ class AppHeader extends HTMLElement {
         nav.classList.remove('open');
         toggle.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Abrir menú');
       });
     });
   }

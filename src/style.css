@@ -528,6 +528,10 @@ table th {
     height: 64px;
   }
 
+  app-header {
+    height: 64px;
+  }
+
   .navbar {
     padding: 0;
   }
