@@ -82,7 +82,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 140px;
+  height: 80px;
 }
 
 .logo {
@@ -164,7 +164,7 @@ p {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 140px; /* Offset for navbar */
+  padding-top: 80px; /* Offset for navbar */
   position: relative;
 }
 
@@ -292,7 +292,7 @@ p {
 
 /* Page Content */
 .content-page {
-  padding-top: 160px;
+  padding-top: 120px;
 }
 
 .page-hero {
