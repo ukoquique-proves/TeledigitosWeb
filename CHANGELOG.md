@@ -2,7 +2,24 @@
 
 All notable changes to the Teledígitos Web project will be documented in this file.
 
-## [2026-07-15] - Architecture, Assets, and Documentation
+## [2026-07-15] - Bug Fixes, Mobile Nav, SEO, and Content
+
+### Added
+- **Mobile hamburger menu**: replaced `display: none` on `.nav-links` with a working toggle menu in `AppHeader.js`, including animated icon and close-on-link-click behavior.
+- **SEO meta tags**: added `<meta name="description">` and Open Graph / Twitter Card tags to all three pages, each with page-specific copy.
+- **CSS `.scrolled` class**: navbar scroll effect now uses a CSS class instead of inline styles, keeping colors in one place.
+- **`app-header` height reservation**: added `app-header { height: 80px }` to prevent layout shift before the custom element upgrades.
+- **Logo CSS classes**: `.nav-logo` and `.footer-logo-img` added to `style.css` to replace inline `style=` attributes on logo images.
+
+### Changed
+- **Profile photo**: replaced `profile.svg` placeholder with `yoFoto.png` in `index.html` and `about.html`.
+- **Favicon paths**: changed `href="/favicon.svg"` to `href="%BASE_URL%favicon.svg"` on all pages so the favicon resolves correctly under the `/TeledigitosWeb/` base path on GitHub Pages.
+- **Image paths**: fixed root-absolute `/yoFoto.png` to relative `./images/yoFoto.png` so assets load correctly on GitHub Pages.
+- **`<script>` placement**: moved `type="module"` script tag to `<head>` on all pages so custom element definitions are fetched as early as possible.
+- **Merged duplicate media queries**: consolidated two separate `@media (max-width: 768px)` blocks in `style.css` into one, resolving a silent `hero-title` font-size conflict.
+- **`about.html` content**: slimmed down to a personal intro + skills summary, removing sections duplicated verbatim from `aspiracion.html` (identity paragraphs, engagement policy, purpose section).
+- **Brand copy**: rewrote the `index.html` about section and `about.html` bio to reduce repetition of "soberanía tecnológica / sin ruido / deuda técnica / criterio autodidacta" across pages; `aspiracion.html` remains the canonical source.
+
 
 ### Added
 - **Web Components**: Extracted Navbar and Footer into native Web Components (`<app-header>` and `<app-footer>`) to centralize layout, ensure link consistency, and prevent duplicated HTML across pages.
