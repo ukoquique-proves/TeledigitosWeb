@@ -7,7 +7,7 @@ class AppHeader extends HTMLElement {
         <div class="container nav-content">
           <div class="logo">
             <a href="index.html">
-              <img src="${teledigitosLogo}" alt="Teledígitos" style="height: 40px; width: auto;" />
+              <img src="${teledigitosLogo}" alt="Teledígitos" class="nav-logo" />
             </a>
           </div>
           <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">

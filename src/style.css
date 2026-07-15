@@ -64,6 +64,16 @@ p {
   padding: 6rem 0;
 }
 
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.footer-logo-img {
+  height: 100px;
+  width: auto;
+}
+
 /* Reserve navbar height before custom element upgrades */
 app-header {
   display: block;
