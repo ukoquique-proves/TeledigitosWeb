@@ -17,7 +17,6 @@ class AppHeader extends HTMLElement {
           </button>
           <nav class="nav-links" id="main-nav">
             <a href="index.html">Inicio</a>
-            <a href="index.html#manifesto">Manifiesto</a>
             <a href="index.html#services">Servicios</a>
             <a href="aspiracion.html">Aspiración</a>
             <a href="about.html">About</a>
