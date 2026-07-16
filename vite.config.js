@@ -12,7 +12,8 @@ export default defineConfig(({ mode }) => {
         input: {
           main: resolve(__dirname, 'index.html'),
           about: resolve(__dirname, 'about.html'),
-          aspiracion: resolve(__dirname, 'aspiracion.html')
+          aspiracion: resolve(__dirname, 'aspiracion.html'),
+          servicios: resolve(__dirname, 'servicios.html')
         }
       }
     }
