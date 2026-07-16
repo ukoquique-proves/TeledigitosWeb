@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ukoquique-proves.github.io/TeledigitosWeb/sitemap.xml
