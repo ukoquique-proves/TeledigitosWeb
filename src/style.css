@@ -44,6 +44,10 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
+.article-section h3 {
+  margin-top: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
