@@ -26,6 +26,7 @@
             <img src="${n}" alt="Teledígitos" class="footer-logo-img" />
           </div>
           <div class="footer-tagline">Tecnología al servicio de la comunidad. / Sistemas de Comunicación Operativa.</div>
+          <div class="footer-back"><a href="https://ukoquique-proves.github.io/favoriteDevPage/" target="_blank" rel="noopener">← Volver al inicio</a></div>
           <div class="footer-copy">&copy; 2026 Teledígitos. Todos los derechos reservados.</div>
         </div>
       </footer>
